@@ -21,7 +21,7 @@ body {
     line-height: 1.6;
 }
 
-/* ========== ENCABEZADO FIJO ========== */
+/* ========== ENCABEZADO ========== */
 #encabezado {
     position: fixed;
     top: 0;
@@ -32,6 +32,14 @@ body {
     border-bottom: 4px solid #145374;
     z-index: 999;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+#navegacion-principal{
+  display: block;
+  @media screen and (max-width: 600px) {
+  
+    display: none;
+}
 }
 
 #encabezado div {
@@ -49,6 +57,7 @@ body {
 }
 
 /* ========== MENÚ DE NAVEGACIÓN ========== */
+
 .menu {
     list-style: none;
     display: flex;
@@ -64,6 +73,11 @@ body {
 .menu li a:hover,
 .menu li a.active {
     color: #E67E22;
+}
+
+/* ========== BOTÓN MENÚ HAMBURGUESA ========== */
+#btn-menu {
+  display: none;
 }
 
 /* ========== CONTENIDO PRINCIPAL ========== */
@@ -370,55 +384,89 @@ body {
     opacity: 1;
 }
 
-/* ========== RESPONSIVE GENERAL ========== */
+/* ========== BOTÓN VOLVER ========== */
+.btn-volver-productos {
+  margin: 20px auto;
+  padding: 10px 18px;
+  background-color: #E67E22;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.btn-volver-productos:hover {
+  background-color: #145374;
+}
+
+/* ========== RESPONSIV ========== */
+
 @media (max-width: 768px) {
-  html{   
-    scroll-padding-top: 150px; 
+  /* Encabezado general */
+
+  #navegacion-principal{
+    position: absolute;
   }
-  body {
-    padding-top: 150px;
-    font-size: 16px;
-  }
+
 
   #encabezado {
-    position: fixed;
-    top: 0;
-    width: 100%;
     background-color: #0A3D62;
-    z-index: 1000;
+    border-bottom: 4px solid #145374;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    flex-direction: column;
-    padding: 10px 0;
-    text-align: center;
+    z-index: 999;
+    width: 100%;
   }
 
-  #encabezado div {
+  /* Contenedor para logo y botón hamburguesa */
+  .contenedor-header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
+    position: relative;
   }
 
   #logo-empresa {
-    height: 40px;
-    margin-bottom: 5px;
+    height: 45px;
   }
 
+  #btn-menu {
+    display: block;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  /* Menú del botón */
   .menu {
+    display: none;
     flex-direction: column;
-    gap: 8px;
+    align-items: flex-start;
+    padding: 10px 20px;
+    gap: 12px;
+    background-color: #0A3D62;
+    position: fixed;
+    top: 70px; /* debajo del botón */
+    right: 0px; 
+    width: 180px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 999;
   }
 
-  .menu a {
-    font-size: 0.95rem;
-    padding: 6px 0;
-  }
-
-  #nombre-empresa {
-    font-size: 1.5rem;
-    margin-top: 120px;
-    margin-bottom: 20px;
-    text-align: center;
-    padding: 0 10px;
+  .menu li a {
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    text-align: left;
+    width: 100%;
   }
 
   /* Grid INICIO y NOSOTROS */
@@ -506,83 +554,8 @@ body {
   .lista-contacto {
     padding: 0 10px;
   }
-
-  iframe {
+    iframe {
     width: 100% !important;
     height: 250px;
-  }
-
-  /* Tipografías */
-  h1, h2, h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-  }
-
-  p, li {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-
-  /* Footer */
-  #pie-pagina {
-    font-size: 0.85rem;
-    padding: 15px 10px;
-  }
-
-  #btn-volver-arriba {
-    bottom: 15px;
-    right: 15px;
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
-    z-index: 999;
-  }
-}
-
-
-/* ========== RESPONSIVE PARA MENOS DE 400px ========== */
-@media (max-width: 400px) { 
-  html{   
-    scroll-padding-top: 50%; 
-  }
-
-  #logo-empresa {
-    height: 35px;
-    margin-bottom: 5px;
-  }
-
-  .menu {
-    gap: 6px;
-    font-size: 0.85rem;
-  }
-
-  #nombre-empresa {
-    font-size: 1.3rem;
-    margin-top: 120px;
-  }
-
-  h1, h2, h3 {
-    font-size: 1.2rem;
-  }
-
-  p, li {
-    font-size: 0.9rem;
-  }
-
-  .imagen-inicio img,
-  .imagen-nosotros img {
-    max-height: 150px;
-  }
-
-  .iconos-contacto a img {
-    width: 35px;
-  }
-
-  #btn-volver-arriba {
-    bottom: 10px;
-    right: 10px;
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
   }
 }
