@@ -36,10 +36,6 @@ body {
 
 #navegacion-principal{
   display: block;
-  @media screen and (max-width: 600px) {
-  
-    display: none;
-}
 }
 
 #encabezado div {
