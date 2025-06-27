@@ -400,7 +400,7 @@ body {
   background-color: #145374;
 }
 
-/* ========== RESPONSIV ========== */
+/* ========== RESPONSIVE ========== */
 
 @media (max-width: 768px) {
   /* Encabezado general */
@@ -408,7 +408,6 @@ body {
   #navegacion-principal{
     position: absolute;
   }
-
 
   #encabezado {
     background-color: #0A3D62;
@@ -488,7 +487,7 @@ body {
     text-align: center;
   }
 
-  /* Equipo */
+  /* Sección Equipo */
   .grid-equipo {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -499,7 +498,7 @@ body {
     max-height: 220px;
   }
 
-  /* Productos */
+  /* Sección Productos */
   .seccion-productos {
     padding: 0 15px;
     text-align: center;
@@ -540,7 +539,7 @@ body {
     margin: 10px auto;
   }
 
-  /* Contacto */
+  /* Sección Contacto */
   .iconos-contacto {
     justify-content: center;
     flex-wrap: wrap;
